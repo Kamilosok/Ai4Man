@@ -1,13 +1,18 @@
-
 import discord
+import token_decoder
 
+#Idk
 intents = discord.Intents.default()
-TOKEN = 'MTAyMTQ5MjQzOTUxODgwNjE1NA.GRs6LH.rM3B-RQiCfXE3Tlm08yHsUE5IONYkqVCiaYuPo'
-
 client = discord.Client(intents=intents)
 
+#Decoding the token
+decoder = token_decoder.Tokener()
+token = decoder.accessFile(decoder)
+
+
+#Launching bot
 @client.event
 async def on_ready():
     print(f'{client.user} has connected to Discord!')
 
-client.run(TOKEN)
+client.run(token)
